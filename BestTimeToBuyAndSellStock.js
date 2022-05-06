@@ -44,3 +44,20 @@ var maxProfit = function (prices) {
   }
   return profit;
 };
+
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function (prices) {
+  let minSoFar = prices[0];
+  let maxProfit = 0;
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i] < minSoFar) {
+      minSoFar = prices[i];
+    }
+    maxProfit =
+      prices[i] - minSoFar > maxProfit ? prices[i] - minSoFar : maxProfit;
+  }
+  return maxProfit;
+};
