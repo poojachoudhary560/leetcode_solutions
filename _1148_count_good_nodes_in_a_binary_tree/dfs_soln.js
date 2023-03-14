@@ -23,3 +23,6 @@ var goodNodes = function (root) {
   let min = -Infinity;
   return dfs(root, min);
 };
+/**
+ * TC O(n)
+ */
