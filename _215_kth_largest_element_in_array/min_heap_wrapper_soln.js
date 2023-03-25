@@ -1,15 +1,11 @@
 class MinHeap {
-  constructor(capacity) {
+  constructor() {
     this.values = [];
-    this.capacity = capacity;
   }
 
   add(val) {
     this.values.push(val);
     this.bubbleUp(this.values.length - 1);
-    if (this.values.length > this.capacity) {
-      this.remove();
-    }
   }
 
   bubbleUp(idx) {
@@ -56,13 +52,23 @@ class MinHeap {
   }
 }
 
+class MinHeapWrapper {
+  constructor(capacity) {
+    this.capacity = capacity;
+    this.minHeap = new MinHeap();
+  }
+  addWrapper(val) {
+    this.minHeap.add(val);
+    if (this.minHeap.values.length > this.capacity) {
+      this.minHeap.remove();
+    }
+  }
+}
 var findKthLargest = function (nums, K) {
-  let minHeap = new MinHeap(K);
-
-  for (let n of nums) minHeap.add(n);
-
-  return minHeap.remove();
+  let minHeapWrapper = new MinHeapWrapper(K);
+  for (let n of nums) minHeapWrapper.addWrapper(n);
+  return minHeapWrapper.minHeap.remove();
 };
-/**
- * time complexity: n(log K)
- */
+
+let nums = [3, 2, 1, 5, 6, 4];
+findKthLargest(nums, 2);
