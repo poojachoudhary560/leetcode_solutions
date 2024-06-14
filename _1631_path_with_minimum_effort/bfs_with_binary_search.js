@@ -46,3 +46,7 @@ var isGood = function (h, Limit) {
   }
   return false;
 };
+
+/**
+ * TC: O(R*C* log 10^6)
+ */

@@ -29,3 +29,14 @@ var checkIfPrerequisite = function (numCourses, prerequisites, queries) {
   }
   return ans;
 };
+
+/**
+ * Floyd Warshall Algorith
+ * Time Complexity O(n^3)
+ */
+
+/**
+ * For DFS/BFS complexity is O((n+E) * n)
+ * where n is no of nodes and E is no of edges
+ * In worst case no of edges is n^2 so worst case complexity is O(n^3)
+ */

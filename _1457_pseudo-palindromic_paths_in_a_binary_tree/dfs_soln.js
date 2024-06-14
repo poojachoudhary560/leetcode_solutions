@@ -37,3 +37,9 @@ var pseudoPalindromicPaths = function (root) {
   let count = Array(10).fill(0);
   return dfs(root, count);
 };
+
+/**
+ *
+ * Time Complexity in this case is the no of nodes
+ * No of nodes = 10^5 => O(n)
+ */

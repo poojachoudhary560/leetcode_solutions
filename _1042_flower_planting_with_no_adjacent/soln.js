@@ -38,3 +38,10 @@ var gardenNoAdj = function (n, paths) {
   }
   return res;
 };
+
+/**
+ *
+ * Time complexity is big O of no of edges
+ * in worst case no of edges will be n^2
+ * O(n^2)
+ */
